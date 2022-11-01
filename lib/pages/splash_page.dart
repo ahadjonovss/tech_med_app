@@ -1,10 +1,34 @@
 import 'package:flutter/material.dart';
+import 'package:tech_shop_app/components/widgets/edited_widgets/fitted_img.dart';
+import 'package:tech_shop_app/components/widgets/edited_widgets/sizedbox.dart';
+import 'package:tech_shop_app/utils/colors.dart';
+
+import '../components/widgets/edited_widgets/mediaQuarees.dart';
+import '../components/widgets/edited_widgets/text_widget.dart';
+import '../utils/project_images.dart';
 
 class SplashPage extends StatelessWidget {
   const SplashPage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: SafeArea(
+        child: Container(
+          width: m_w(context),
+          height: m_h(context),
+          color: AppColors.C_5956E9.withOpacity(0.7),
+          child: Column(
+            children: [
+              sized(h: 50),
+              text("Find Your\nGadget",fontsize: 65,fontweight: FontWeight.w800),
+              fitted_img(img: Images.png_splash,h: 400,w: 400),
+              
+
+            ],
+          ),
+        ),
+      ),
+    );
   }
 }
