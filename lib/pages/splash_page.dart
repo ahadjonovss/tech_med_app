@@ -22,7 +22,10 @@ class SplashPage extends StatelessWidget {
           child: Column(
             children: [
               sized(h: 50),
-              text("Find Your\nGadget",fontsize: 65,fontweight: FontWeight.w800),
+              text("Find Your\nGadget",fontsize: 65,
+                fontweight: FontWeight.w800,
+                clr: Colors.white
+              ),
               fitted_img(img: Images.png_splash,h: 400,w: 400),
               sized(h: 64),
               buttonNavigate(
