@@ -5,5 +5,6 @@ double m_h(BuildContext context){
 }
 
 double m_w(BuildContext context){
+  print(MediaQuery.of(context).size.width);
   return MediaQuery.of(context).size.width;
 }
