@@ -43,7 +43,8 @@ class _LoginPageState extends State<LoginPage> {
                 width: 400.w,
                 decoration: BoxDecoration(
                   color: Colors.white,
-                  borderRadius: BorderRadius.circular(20).r
+                  borderRadius: const BorderRadius.only(topRight: Radius.circular(20),
+                      topLeft: Radius.circular(20)).r
                 ),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
