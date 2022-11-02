@@ -40,6 +40,8 @@ dependencies:
   flutter_screenutil: ^5.5.4
   google_fonts: ^3.0.1
   page_view_dot_indicator: ^2.0.0
+  dot_navigation_bar:
+
 
 dev_dependencies:
   flutter_test:

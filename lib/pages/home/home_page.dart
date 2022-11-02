@@ -1,3 +1,4 @@
+import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tech_shop_app/components/local_data/database.dart';
@@ -20,10 +21,18 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  int c_page=0;
   TextEditingController ctrl=TextEditingController();
   @override
   Widget build(BuildContext context) {
+    var _selectedTab = _SelectedTab.home;
+    void _handleIndexChanged(int i) {
+      setState(() {
+        _selectedTab = _SelectedTab.values[i];
+      });
+    }
     return Scaffold(
+      extendBody: true,
       backgroundColor: AppColors.C_E5E5E5,
       drawer: const Drawer(),
       body: SafeArea(
@@ -96,6 +105,42 @@ class _HomePageState extends State<HomePage> {
           ),
         ),
       ),
+      bottomNavigationBar:  DotNavigationBar(
+        currentIndex: c_page,
+        onTap: (p0) {
+          setState(() {
+            c_page=p0;
+          });
+        },
+        // dotIndicatorColor: Colors.black,
+        items: [
+          /// Home
+          DotNavigationBarItem(
+            icon: Icon(Icons.home),
+            selectedColor: Colors.purple,
+          ),
+
+          /// Likes
+          DotNavigationBarItem(
+            icon: Icon(Icons.favorite_border),
+            selectedColor: Colors.purple,
+          ),
+
+          /// basket
+          DotNavigationBarItem(
+            icon: Icon(Icons.shopping_basket),
+            selectedColor: Colors.purple,
+          ),
+
+          /// Profile
+          DotNavigationBarItem(
+            icon: Icon(Icons.person),
+            selectedColor: Colors.purple,
+          ),
+
+        ],
+      ),
     );
   }
 }
+enum _SelectedTab { home, favorite, search, person }
