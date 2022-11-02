@@ -1,7 +1,6 @@
 import '../models/product_model.dart';
 
 List<Product> wearables=[
-
   Product(
       title: "Apple Watch",
       subtitle: "Series 6",
@@ -53,4 +52,52 @@ List<Product> wearables=[
 
       ],
       main_image: "https://avatars.mds.yandex.net/i?id=082b6384c8115744fe18278947b7097bc025041f-7086231-images-thumbs&n=13")
+];
+
+List<Product> laptops=[
+  Product(
+      title: "Galaxy Watch",
+      subtitle: "Active 2",
+      description: "The Samsung Galaxy Watch is a smartwatch developed by Samsung Electronics. It was announced on 9 August 2018.[1][2][3][4][5][6][7][8][9] The Galaxy Watch was scheduled for availability in the United States starting on 24 August 2018, at select carriers and retail locations in South Korea on 31 August 2018, and in additional select markets on 14 September 2018.",
+      price: 250,
+      images: [
+        "https://avatars.mds.yandex.net/i?id=4f5415f911fc446eb7f025ee6bbc415427583577-4457466-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=5167c7850e9c0d74c7f313096ceca71fdfbd0c6e-4076784-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=88e56e728d0dcbf11ebf7555dc592ffe-5468312-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=7c5ae083a5124c0006ca3959f7a94658-5349727-images-thumbs&n=13"
+
+      ],
+      main_image: "https://avatars.mds.yandex.net/i?id=d7234a036b0592bb6ca8893409435777a8378a56-6489726-images-thumbs&n=13"),
+];
+
+List<Product> phones=[
+  Product(
+      title: "Galaxy Watch",
+      subtitle: "Active 2",
+      description: "The Samsung Galaxy Watch is a smartwatch developed by Samsung Electronics. It was announced on 9 August 2018.[1][2][3][4][5][6][7][8][9] The Galaxy Watch was scheduled for availability in the United States starting on 24 August 2018, at select carriers and retail locations in South Korea on 31 August 2018, and in additional select markets on 14 September 2018.",
+      price: 250,
+      images: [
+        "https://avatars.mds.yandex.net/i?id=4f5415f911fc446eb7f025ee6bbc415427583577-4457466-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=5167c7850e9c0d74c7f313096ceca71fdfbd0c6e-4076784-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=88e56e728d0dcbf11ebf7555dc592ffe-5468312-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=7c5ae083a5124c0006ca3959f7a94658-5349727-images-thumbs&n=13"
+
+      ],
+      main_image: "https://avatars.mds.yandex.net/i?id=d7234a036b0592bb6ca8893409435777a8378a56-6489726-images-thumbs&n=13"),
+];
+
+List<Product> drones=[
+  Product(
+      title: "Galaxy Watch",
+      subtitle: "Active 2",
+      description: "The Samsung Galaxy Watch is a smartwatch developed by Samsung Electronics. It was announced on 9 August 2018.[1][2][3][4][5][6][7][8][9] The Galaxy Watch was scheduled for availability in the United States starting on 24 August 2018, at select carriers and retail locations in South Korea on 31 August 2018, and in additional select markets on 14 September 2018.",
+      price: 250,
+      images: [
+        "https://avatars.mds.yandex.net/i?id=4f5415f911fc446eb7f025ee6bbc415427583577-4457466-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=5167c7850e9c0d74c7f313096ceca71fdfbd0c6e-4076784-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=88e56e728d0dcbf11ebf7555dc592ffe-5468312-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=7c5ae083a5124c0006ca3959f7a94658-5349727-images-thumbs&n=13"
+
+      ],
+      main_image: "https://avatars.mds.yandex.net/i?id=d7234a036b0592bb6ca8893409435777a8378a56-6489726-images-thumbs&n=13"),
 ];

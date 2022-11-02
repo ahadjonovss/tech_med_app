@@ -1,7 +1,9 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tech_shop_app/components/local_data/database.dart';
 import 'package:tech_shop_app/components/widgets/custom_widgets/product_item.dart';
+import 'package:tech_shop_app/components/widgets/custom_widgets/product_view.dart';
 import 'package:tech_shop_app/components/widgets/custom_widgets/produtc_widget.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/fitted_img.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/mediaQuarees.dart';
@@ -87,11 +89,15 @@ class _HomePageState extends State<HomePage> {
                       ),
                       sized(h: 20),
                       SizedBox(
-                        height: 300.h,
-                        child: ListView.builder(
-                          scrollDirection: Axis.horizontal,
-                            itemBuilder: (context, index) => product_item(),),
+                        height: 300.w,
+                        child: TabBarView(
+                            children: [
+                              product_view(context,wearables),
+                              product_view(context, laptops)
+
+                            ]),
                       )
+
                     ],
                   )
               )
