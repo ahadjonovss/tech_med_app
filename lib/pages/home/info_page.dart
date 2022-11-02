@@ -92,7 +92,7 @@ class _InformationPageState extends State<InformationPage> {
                             unselectedSize: const Size(8, 8),
                             duration: const Duration(milliseconds: 200),
                             margin: const EdgeInsets.symmetric(horizontal: 4),
-                            padding: EdgeInsets.all(0).r,
+                            padding: const EdgeInsets.all(0).r,
                             alignment: Alignment.center,
                             fadeEdges: true,
                           ),

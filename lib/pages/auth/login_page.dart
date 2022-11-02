@@ -77,7 +77,7 @@ class _LoginPageState extends State<LoginPage> {
                             fontsize: 20,
                           fontweight: FontWeight.w600
                         ),
-                        RouteName.home, context: context),
+                        RouteName.main, context: context),
                     sized(h: 20),
                     Center(child: InkWell(
                       onTap: (){

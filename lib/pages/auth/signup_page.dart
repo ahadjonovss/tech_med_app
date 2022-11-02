@@ -75,7 +75,7 @@ class _SignUpState extends State<SignUp> {
                             fontsize: 20,
                             fontweight: FontWeight.w600
                         ),
-                        RouteName.home, context: context),
+                        RouteName.main, context: context),
 
                   ],
                 ),
