@@ -1,12 +1,14 @@
 class Product{
-  String name;
+  String title;
+  String subtitle;
   String description;
   int price;
   String main_image;
   List<String> images=[];
 
   Product({
-    required this.name,
+    required this.title,
+    required this.subtitle,
     required this.description,
     required this.price,
     required this.images,
