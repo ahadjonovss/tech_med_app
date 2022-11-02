@@ -2,6 +2,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tech_shop_app/components/local_data/database.dart';
+import 'package:tech_shop_app/components/routes/routes.dart';
 import 'package:tech_shop_app/components/widgets/custom_widgets/product_item.dart';
 import 'package:tech_shop_app/components/widgets/custom_widgets/product_view.dart';
 import 'package:tech_shop_app/components/widgets/custom_widgets/produtc_widget.dart';
@@ -93,14 +94,29 @@ class _HomePageState extends State<HomePage> {
                         child: TabBarView(
                             children: [
                               product_view(context,wearables),
-                              product_view(context, laptops)
-
+                              product_view(context, laptops),
+                              product_view(context, laptops),
+                              product_view(context, drones)
                             ]),
                       )
-
                     ],
                   )
-              )
+              ),
+              sized(h:12),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, RouteName.search);
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    text("See more",fontweight: FontWeight.w800),
+                    Icon(Icons.navigate_next_outlined,color: AppColors.C_5956E9,),
+                    sized(w:12),
+                  ],
+                ),
+              ),
+
 
             ],
           ),

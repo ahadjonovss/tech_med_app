@@ -8,6 +8,7 @@ Widget product_view(BuildContext context,List<Product> products){
   return SizedBox(
     height: 300.h,
     child: ListView.builder(
+      physics: const BouncingScrollPhysics(),
       itemCount: products.length,
       scrollDirection: Axis.horizontal,
       itemBuilder: (context, index) => product_item(products[index]),),
