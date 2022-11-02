@@ -1,6 +1,8 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:tech_shop_app/components/widgets/custom_widgets/product_item.dart';
+import 'package:tech_shop_app/components/widgets/custom_widgets/produtc_widget.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/fitted_img.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/mediaQuarees.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/sizedbox.dart';
@@ -83,45 +85,12 @@ class _HomePageState extends State<HomePage> {
                         labelColor: AppColors.C_5956E9,
                         unselectedLabelColor: Colors.grey,
                       ),
-                      sized(h: 60),
-                      Container(
-                        height: 240.h,
-                        width: 200.w,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(20).r,
-                          color: Colors.white
-                        ),
-                        child: Stack(
-                          clipBehavior: Clip.none,
-                          children: [
-                            Positioned(
-                              top: -50,
-                                right: 30,
-                                child: CircleAvatar(
-                                  radius: 70,
-                                  child: Image.asset(Images.png_splash),
-                                )),
-                          Align(
-                            alignment: Alignment.center,
-                            child: text("Apple Watch",
-                                clr: Colors.black,
-                                fontweight: FontWeight.w600,
-                                fontsize: 22),
-                          ),
-                            Container(
-                              margin: EdgeInsets.only(top: 50).r,
-                              child: Align(
-                                alignment: Alignment.center,
-                                  child: text("Series 6 . Red",
-                                    fontsize: 16,
-                                    fontweight: FontWeight.w600,
-                                    clr: Colors.grey
-                                  )),
-                            ),
-                            Positioned(
-                                child: )
-                          ],
-                        ),
+                      sized(h: 20),
+                      SizedBox(
+                        height: 300.h,
+                        child: ListView.builder(
+                          scrollDirection: Axis.horizontal,
+                            itemBuilder: (context, index) => product_item(),),
                       )
                     ],
                   )
