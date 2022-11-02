@@ -5,6 +5,8 @@ class Product{
   int price;
   String main_image;
   List<String> images=[];
+  bool isLiked=false;
+  int count=0;
 
   Product({
     required this.title,

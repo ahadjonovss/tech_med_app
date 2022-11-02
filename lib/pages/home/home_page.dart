@@ -1,11 +1,9 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tech_shop_app/components/local_data/database.dart';
 import 'package:tech_shop_app/components/routes/routes.dart';
-import 'package:tech_shop_app/components/widgets/custom_widgets/product_item.dart';
 import 'package:tech_shop_app/components/widgets/custom_widgets/product_view.dart';
-import 'package:tech_shop_app/components/widgets/custom_widgets/produtc_widget.dart';
+import 'package:tech_shop_app/components/widgets/custom_widgets/search_widget.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/fitted_img.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/mediaQuarees.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/sizedbox.dart';
@@ -22,14 +20,15 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
+  TextEditingController ctrl=TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.C_E5E5E5,
-      drawer: Drawer(),
+      drawer: const Drawer(),
       body: SafeArea(
         child: Container(
-          padding: EdgeInsets.only(left: 32,top:32 ).r,
+          padding: const EdgeInsets.only(left: 32,top:32 ).r,
           height: m_h(context),
           width: m_w(context),
           child: Column(
@@ -38,32 +37,7 @@ class _HomePageState extends State<HomePage> {
               Row(
                 children: [
                   fitted_img(img: Images.icn_menu,h: 16,w: 24),
-                  Container(
-                    margin: EdgeInsets.only(left: 24.w),
-                    padding: EdgeInsets.only(left: 12).r,
-                    height: 60.h,
-                    width: 280.w,
-                    decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(30).r,
-                      border: Border.all(color: Colors.grey)
-                    ),
-                    child: Center(
-                      child: Row(
-                        children:  [
-                          const Icon(Icons.search,color: Colors.grey,),
-                          sized(w: 8),
-                          SizedBox(
-                            width: 200.w,
-                              child: const TextField(
-                                decoration: InputDecoration(
-                                  border: InputBorder.none,
-                                  hintText: "Search"
-                                ),
-                              ))
-                        ],
-                      ),
-                    )
-                  ),
+                  search_widget(ctrl),
                 ],
               ),
               sized(h: 52),

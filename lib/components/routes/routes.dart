@@ -28,10 +28,11 @@ class RouteName{
 
 class AppRoutes{
   static Route generateRoutes(RouteSettings settings){
+    dynamic args=settings.arguments;
     switch (settings.name){
       case RouteName.splash: return MaterialPageRoute(builder: (_)=>const SplashPage());
       case RouteName.favourite: return MaterialPageRoute(builder: (_)=>const FavouritesPage());
-      case RouteName.info: return MaterialPageRoute(builder: (_)=>const InformationPage());
+      case RouteName.info: return MaterialPageRoute(builder: (_)=> InformationPage(product: args));
       case RouteName.search: return MaterialPageRoute(builder: (_)=>const SearchPage());
       case RouteName.sh_basket: return MaterialPageRoute(builder: (_)=>const ShopBasketPage());
       case RouteName.ch_out: return MaterialPageRoute(builder: (_)=>const CheckOutPage());

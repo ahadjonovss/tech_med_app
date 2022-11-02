@@ -11,6 +11,6 @@ Widget product_view(BuildContext context,List<Product> products){
       physics: const BouncingScrollPhysics(),
       itemCount: products.length,
       scrollDirection: Axis.horizontal,
-      itemBuilder: (context, index) => product_item(products[index]),),
+      itemBuilder: (context, index) => product_item(products[index],context),),
   );
 }
