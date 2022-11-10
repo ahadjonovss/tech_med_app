@@ -6,26 +6,26 @@ import '../../../utils/project_images.dart';
 import '../../models/product_model.dart';
 import '../edited_widgets/text_widget.dart';
 
-Widget product_item(Product product,BuildContext context){
+Widget product_item(Product product,BuildContext context,{bool isSearch=false}){
   return InkWell(
     onTap: (){
       Navigator.pushNamed(context, RouteName.info,arguments: product);
     },
     child: Container(
       margin: const EdgeInsets.only(right: 16).r,
-      height: 300.h,
-      width: 200.w,
+      height: isSearch==true?260.h:300.h,
+      width: isSearch==true?170.w:200.w,
       child: Stack(
         clipBehavior: Clip.none,
         children: [
-          const SizedBox(
+          SizedBox(
             height: 60,
-            width: 200,
+            width: isSearch==true?160.w:200.w,
           ),
           Container(
             margin: const EdgeInsets.only(top: 60).r,
             height: 240.h,
-            width: 200.w,
+            width: isSearch==true?170.w:200.w,
             decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(20).r,
                 color: Colors.white
@@ -59,11 +59,10 @@ Widget product_item(Product product,BuildContext context){
               ],
             ),
           ),
-          Positioned(
-            top: 10,
-            left: 30,
+          Container(
+            alignment: Alignment(0,-1),
               child: CircleAvatar(
-                radius: 70,
+                radius: isSearch==true?60:70,
                 backgroundImage: NetworkImage(product.main_image),
 
               )),

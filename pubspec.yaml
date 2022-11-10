@@ -42,6 +42,8 @@ dependencies:
   page_view_dot_indicator: ^2.0.0
   dot_navigation_bar:
   lottie: ^1.4.3
+  url_launcher: ^6.1.6
+
 
 
 dev_dependencies:

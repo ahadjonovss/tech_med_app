@@ -4,7 +4,7 @@ import 'package:tech_shop_app/pages/auth/forgotpassword_page.dart';
 import 'package:tech_shop_app/pages/auth/login_page.dart';
 import 'package:tech_shop_app/pages/auth/signup_page.dart';
 import 'package:tech_shop_app/pages/home/favourites_page.dart';
-import 'package:tech_shop_app/pages/home/info_page.dart';
+import 'package:tech_shop_app/pages/description/info_page.dart';
 import 'package:tech_shop_app/pages/home/main_page.dart';
 import 'package:tech_shop_app/pages/home/search_page.dart';
 import 'package:tech_shop_app/pages/home/shop_basket_page.dart';

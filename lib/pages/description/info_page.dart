@@ -6,6 +6,7 @@ import 'package:tech_shop_app/components/widgets/buttons/navigate_button.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/fitted_img.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/sizedbox.dart';
 import 'package:tech_shop_app/utils/colors.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../components/models/product_model.dart';
 import '../../components/widgets/edited_widgets/mediaQuarees.dart';
@@ -137,8 +138,20 @@ class _InformationPageState extends State<InformationPage> {
                           onTap: (){},
                           child: Row(
                             children: [
-                              text("Full desription",
-                                fontweight: FontWeight.w600
+                              InkWell(
+                                child: text("Full desription",
+                                  fontweight: FontWeight.w600
+                                ),
+                                onTap: () async {
+                                  if (!await launchUrl(
+                                  Uri.parse(widget.product.desc_url??""),
+                                  mode: LaunchMode.inAppWebView,
+                                  webViewConfiguration: const WebViewConfiguration(
+                                  headers: <String, String>{'my_header_key': 'my_header_value'}),
+                                  )) {
+                                  throw 'Could not launch ${widget.product.desc_url}';
+                                  }
+                                },
                               ),
                               const Icon(Icons.navigate_next,color: AppColors.C_5956E9,)
                             ],
