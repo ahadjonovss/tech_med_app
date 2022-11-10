@@ -4,7 +4,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 import '../edited_widgets/sizedbox.dart';
 
-Widget search_widget(TextEditingController ctrl){
+Widget search_widget(TextEditingController ctrl,{bool isPage=false}){
   return Container(
       margin: EdgeInsets.only(left: 24.w),
       padding: const EdgeInsets.only(left: 12).r,
@@ -21,13 +21,15 @@ Widget search_widget(TextEditingController ctrl){
             sized(w: 8),
             SizedBox(
                 width: 200.w,
-                child:  TextField(
+                child:  isPage==true?
+                TextField(
                   controller: ctrl,
                   decoration: const InputDecoration(
                       border: InputBorder.none,
                       hintText: "Search"
                   ),
-                ))
+                )
+                    :const Text("Search",style: TextStyle(color: Colors.grey),))
           ],
         ),
       )

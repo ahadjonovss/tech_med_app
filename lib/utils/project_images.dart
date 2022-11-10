@@ -4,4 +4,8 @@ class Images{
 
   //icons
   static const icn_menu="assets/icons/menu.png";
+
+  //lotties
+
+static const lt_nothing_here="assets/lotties/nothing_here.json";
 }

@@ -101,3 +101,10 @@ List<Product> drones=[
       ],
       main_image: "https://avatars.mds.yandex.net/i?id=d7234a036b0592bb6ca8893409435777a8378a56-6489726-images-thumbs&n=13"),
 ];
+
+List<List<Product>> all_product=[
+  wearables,
+  laptops,
+  phones,
+  drones
+];

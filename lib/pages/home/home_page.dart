@@ -26,72 +26,79 @@ class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
     return SafeArea(
-      child: Container(
-        padding: const EdgeInsets.only(left: 32,top:32 ).r,
-        height: m_h(context),
-        width: m_w(context),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                fitted_img(img: Images.icn_menu,h: 16,w: 24),
-                search_widget(ctrl),
-              ],
-            ),
-            sized(h: 52),
-            text("Order online\ncollect in store",
-                clr: Colors.black,
-                fontweight: FontWeight.w800,
-                fontsize: 34
-            ),
-            sized(h: 40),
-            DefaultTabController(length: 4,
-                child: Column(
-                  children:  [
-                    const TabBar(
-                      tabs: [
-                        Tab(child: Text("Wearable"),),
-                        Tab(child: Text("Laptops"),),
-                        Tab(child: Text("Phones"),),
-                        Tab(child: Text("Drones"),),
-                      ],
-                      indicatorColor: AppColors.C_5956E9,
-                      isScrollable: true,
-                      labelColor: AppColors.C_5956E9,
-                      unselectedLabelColor: Colors.grey,
-                    ),
-                    sized(h: 20),
-                    SizedBox(
-                      height: 300.w,
-                      child: TabBarView(
-                          children: [
-                            product_view(context,wearables),
-                            product_view(context, laptops),
-                            product_view(context, laptops),
-                            product_view(context, drones)
-                          ]),
-                    )
-                  ],
-                )
-            ),
-            sized(h:12),
-            InkWell(
-              onTap: () {
-                Navigator.pushNamed(context, RouteName.search);
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.end,
+      child: SingleChildScrollView(
+        physics: BouncingScrollPhysics(),
+        child: Container(
+          padding: const EdgeInsets.only(left: 32,top:32 ).r,
+          height: m_h(context),
+          width: m_w(context),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
                 children: [
-                  text("See more",fontweight: FontWeight.w800),
-                  Icon(Icons.navigate_next_outlined,color: AppColors.C_5956E9,),
-                  sized(w:12),
+                  fitted_img(img: Images.icn_menu,h: 16,w: 24),
+                  InkWell(
+                    onTap: (){
+                      Navigator.pushNamed(context, RouteName.search);
+                    },
+                      child: search_widget(ctrl)),
                 ],
               ),
-            ),
+              sized(h: 52),
+              text("Order online\ncollect in store",
+                  clr: Colors.black,
+                  fontweight: FontWeight.w800,
+                  fontsize: 34
+              ),
+              sized(h: 40),
+              DefaultTabController(length: 4,
+                  child: Column(
+                    children:  [
+                      const TabBar(
+                        tabs: [
+                          Tab(child: Text("Wearable"),),
+                          Tab(child: Text("Laptops"),),
+                          Tab(child: Text("Phones"),),
+                          Tab(child: Text("Drones"),),
+                        ],
+                        indicatorColor: AppColors.C_5956E9,
+                        isScrollable: true,
+                        labelColor: AppColors.C_5956E9,
+                        unselectedLabelColor: Colors.grey,
+                      ),
+                      sized(h: 20),
+                      SizedBox(
+                        height: 300.w,
+                        child: TabBarView(
+                            children: [
+                              product_view(context,wearables),
+                              product_view(context, laptops),
+                              product_view(context, laptops),
+                              product_view(context, drones)
+                            ]),
+                      )
+                    ],
+                  )
+              ),
+              sized(h:12),
+              InkWell(
+                onTap: () {
+                  Navigator.pushNamed(context, RouteName.search);
+                },
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    text("See more",fontweight: FontWeight.w800),
+                    Icon(Icons.navigate_next_outlined,color: AppColors.C_5956E9,),
+                    sized(w:12),
+                  ],
+                ),
+              ),
 
 
-          ],
+            ],
+          ),
         ),
       ),
     );
