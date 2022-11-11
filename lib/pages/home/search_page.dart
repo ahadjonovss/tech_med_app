@@ -32,8 +32,8 @@ class _SearchPageState extends State<SearchPage> {
         child: SingleChildScrollView(
           child: Container(
             padding: const EdgeInsets.only(left: 20, top: 32,right: 20).r,
-            height: 1200,
             width: m_w(context),
+            height: m_h(context),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -79,18 +79,21 @@ class _SearchPageState extends State<SearchPage> {
                     )
                   ],
                 ),
-                Container(
-                  width: 400,
-                  child: GridView.builder(
-                    shrinkWrap: true,
-                    itemCount: found.length,
-                    gridDelegate: const  SliverGridDelegateWithFixedCrossAxisCount(
-                        crossAxisCount: 2,
+                SingleChildScrollView(
+                  physics: BouncingScrollPhysics(),
+                  child: Expanded(
+                    child: GridView.builder(
+                      shrinkWrap: true,
+                      itemCount: found.length,
+                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                          crossAxisCount: 2,
+                        childAspectRatio: 4/5
 
-                    ),
-                    itemBuilder:(context, index) {
-                      return product_item(found[index], context);
-                    }, )
+                      ),
+                      itemBuilder:(context, index) {
+                        return product_item(found[index], context);
+                      }, )
+                  ),
                 )
               ],
             ),

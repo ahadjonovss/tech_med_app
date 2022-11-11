@@ -60,12 +60,15 @@ Widget product_item(Product product,BuildContext context,{bool isSearch=false}){
             ),
           ),
           Container(
+            height: 100,
+            width: 200,
+            decoration: BoxDecoration(
+              image: DecorationImage(
+                image: NetworkImage(product.main_image)
+              )
+            ),
             alignment: Alignment(0,-1),
-              child: CircleAvatar(
-                radius: isSearch==true?60:70,
-                backgroundImage: NetworkImage(product.main_image),
-
-              )),
+              ),
         ],
       ),
     ),

@@ -14,7 +14,7 @@ List<Product> wearables=[
 
       ],
       main_image: "https://avatars.mds.yandex.net/i?id=22af0134e5f01e8da6b336ee56105e9da58d56d8-4558237-images-thumbs&n=13",
-    desc_url: "https://www.apple.com/uz/apple-watch-series-6/"
+    desc_url: "https://cdn.pocket-lint.com/r/s/1200x/assets/images/149333-smartwatches-news-the-apple-watch-series-3-is-now-available-at-its-best-ever-price-image1-yu0cn4qv87.jpg"
   ),
   Product(
       title: "Galaxy Watch",
@@ -64,20 +64,30 @@ List<Product> wearables=[
 
 List<Product> laptops=[
   Product(
-      title: "Huawei Watch",
-      subtitle: "Fit 2 version",
-      description: "With its 1.74-inch AMOLED display, framed to perfection by ultra-narrow bezels, HUAWEI WATCH FIT 2 gives you exactly what you need with just a raise of the wrist. From workouts to incoming calls, everything is laid out for you in a refreshingly natural way.",
-      price: 290,
+      title: "MacBook Pro",
+      subtitle: "13-inch",
+      description: "The new M2 chip makes the 13‑inch MacBook Pro more capable than ever. The same compact design supports up to 20 hours of battery life1 and an active cooling system to sustain enhanced performance. Featuring a brilliant Retina display, a FaceTime HD camera, and studio‑quality mics, it’s our most portable pro laptop.",
+      price: 1299,
       images: [
-        "https://avatars.mds.yandex.net/i?id=2eebf19e35aeed4db524140a95ec58c5b88118ea-5889051-images-thumbs&n=13",
-        "https://avatars.mds.yandex.net/i?id=cac7ebc530f590a075b8b4bc2e92cf38-6608246-images-thumbs&n=13",
-        "https://avatars.mds.yandex.net/i?id=6347c625bdf9fb86d683112f6768ebd3a614c341-5026425-images-thumbs&n=13",
-        "https://avatars.mds.yandex.net/i?id=7c56f581f398f057f424ec988bd9a621-4011284-images-thumbs&n=13"
+        "https://avatars.mds.yandex.net/i?id=5db211df461f221e400fb98e7aabf659-5194765-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=b09c50af374fb9a813ce6883f9e4bd8c-5236630-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=2648419ab2ea7639609061456231972e-5299516-images-thumbs&n=13",
+        "https://avatars.mds.yandex.net/i?id=edc8556dc9e18db4fa690b59b17c88de-4344700-images-thumbs&n=13"
 
       ],
-      main_image: "https://avatars.mds.yandex.net/i?id=082b6384c8115744fe18278947b7097bc025041f-7086231-images-thumbs&n=13",
-      desc_url: "https://consumer.huawei.com/en/wearables/watch-fit2/"
+      main_image: "https://www.freepnglogos.com/uploads/macbook-png/macbook-cleanmymac-the-best-mac-cleanup-app-for-macos-get-32.png",
+      desc_url: "https://www.apple.com/macbook-pro-13/   "
   )
+  // Product(
+  //     desc_url: desc_url,
+  //     title: title,
+  //     subtitle: subtitle,
+  //     description: description,
+  //     price: price,
+  //     images: images,
+  //     main_image: main_image,
+  //
+  // )
 ];
 
 List<Product> phones=[
