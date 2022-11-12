@@ -60,11 +60,12 @@ Widget product_item(Product product,BuildContext context,{bool isSearch=false}){
             ),
           ),
           Container(
-            height: 100,
+            height: 130,
             width: 200,
             decoration: BoxDecoration(
+              shape: BoxShape.circle,
               image: DecorationImage(
-                image: NetworkImage(product.main_image)
+                image: NetworkImage(product.main_image),
               )
             ),
             alignment: Alignment(0,-1),

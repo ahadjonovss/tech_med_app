@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
                             children: [
                               product_view(context,wearables),
                               product_view(context, laptops),
-                              product_view(context, laptops),
+                              product_view(context, phones),
                               product_view(context, drones)
                             ]),
                       )

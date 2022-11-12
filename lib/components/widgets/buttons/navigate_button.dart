@@ -35,13 +35,11 @@ Widget button_addList(Widget mytext,
     required dynamic scaffoldKey}) {
   return InkWell(
     onTap: () {
-      if(shop_basket.contains(product)){
         product.count++;
-      }
-      shop_basket.add(product);
+        shop_basket.add(product);
       final snackBar = SnackBar(
           content: Text("${product.title} added to Shop Basket!"),
-        duration: Duration(milliseconds: 700),
+        duration: const Duration(milliseconds: 700),
       );
 
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
