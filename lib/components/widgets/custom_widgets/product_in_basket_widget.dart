@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tech_shop_app/components/local_data/shop_baskett.dart';
+import 'package:tech_shop_app/components/routes/routes.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/sizedbox.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/text_widget.dart';
 import 'package:tech_shop_app/utils/colors.dart';
@@ -63,7 +64,7 @@ class _productInBasket_widgetState extends State<productInBasket_widget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Container(
-                          margin: EdgeInsets.only(right: 6).r,
+                          margin: const EdgeInsets.only(right: 6).r,
                           height: 20.h,
                           width: 20.h,
                           decoration: BoxDecoration(
@@ -80,6 +81,7 @@ class _productInBasket_widgetState extends State<productInBasket_widget> {
                                   shop_basket.remove(widget.product);
                                   widget.setstatePage;
                                 }
+                                widget.setstatePage;
                                 setState(() {});
                               },
                                 child: const Text("-",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 16),)),

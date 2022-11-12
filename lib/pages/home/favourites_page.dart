@@ -1,7 +1,11 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tech_shop_app/components/local_data/database.dart';
+import 'package:tech_shop_app/components/models/product_model.dart';
+import 'package:tech_shop_app/components/widgets/custom_widgets/product_in_basket_widget.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/mediaQuarees.dart';
+import 'package:tech_shop_app/utils/colors.dart';
 
 class FavouritesPage extends StatefulWidget {
   const FavouritesPage({Key? key}) : super(key: key);
@@ -13,18 +17,17 @@ class FavouritesPage extends StatefulWidget {
 class _FavouritesPageState extends State<FavouritesPage> {
   @override
   Widget build(BuildContext context) {
-
-    dynamic check_fav(){
-      bool isHas=false;
+      List<Product> favs=[];
       for(var i in all_product){
         for (var j in i){
-
+          if(j.isLiked==true){
+            favs.add(j);
+          }
         }
       }
-    }
-
 
     return Scaffold(
+      backgroundColor: AppColors.C_E5E5E5,
       appBar: AppBar(
         title: const Text("Favourites",style: TextStyle(color: Colors.black),),
         centerTitle: true,
@@ -34,13 +37,14 @@ class _FavouritesPageState extends State<FavouritesPage> {
       ),
       body: SafeArea(
         child: Container(
+          padding: EdgeInsets.all(24).r,
           height: m_h(context),
           width: m_w(context),
-          child: Column(
-            children: [
-
-            ],
-          ),
+          child: ListView.builder(
+            itemCount: favs.length,
+              itemBuilder: (context, index) {
+                return productInBasket_widget(product: favs[index], setstatePage: () { setState(() {}); },);
+              },)
         ),
       ),
     );
