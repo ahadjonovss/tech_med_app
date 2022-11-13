@@ -6,6 +6,7 @@ import 'package:tech_shop_app/pages/auth/signup_page.dart';
 import 'package:tech_shop_app/pages/home/favourites_page.dart';
 import 'package:tech_shop_app/pages/description/info_page.dart';
 import 'package:tech_shop_app/pages/home/main_page.dart';
+import 'package:tech_shop_app/pages/home/profile_page.dart';
 import 'package:tech_shop_app/pages/home/search_page.dart';
 import 'package:tech_shop_app/pages/home/shop_basket_page.dart';
 import 'package:tech_shop_app/pages/purchase/check_uot_page.dart';
@@ -27,6 +28,7 @@ class RouteName{
   static const ch_out="chout";
   static const payment="pymnt";
   static const main='main';
+  static const profile='prf';
 }
 
 class AppRoutes{
@@ -34,6 +36,7 @@ class AppRoutes{
     dynamic args=settings.arguments;
     switch (settings.name){
       case RouteName.splash: return MaterialPageRoute(builder: (_)=>const SplashPage());
+      case RouteName.profile: return MaterialPageRoute(builder: (_)=>const ProfilePage());
       case RouteName.main: return MaterialPageRoute(builder: (_)=>const MainPage());
       case RouteName.favourite: return MaterialPageRoute(builder: (_)=>const FavouritesPage());
       case RouteName.info: return MaterialPageRoute(builder: (_)=> InformationPage(product: args));
