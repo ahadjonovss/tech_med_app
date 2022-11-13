@@ -46,71 +46,28 @@ class _productInBasket_widgetState extends State<productInBasket_widget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sized(h: 16),
-              text(widget.product.title+widget.product.subtitle,
+              text(widget.product.title+" "+widget.product.subtitle,
                   clr: Colors.black,
                 fontweight: FontWeight.w600
               ),
               sized(h: 8),
               text("\$ ${widget.product.price.toDouble()}",fontweight: FontWeight.w600),
               sized(h: 8),
-              Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  Text("Quantity",style: TextStyle(fontSize: 18.sp,fontWeight: FontWeight.w300),),
-                  Container(
-                    margin: const EdgeInsets.only(left: 12).r,
-                    width: 70.w,
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                      children: [
-                        Container(
-                          margin: const EdgeInsets.only(right: 6).r,
-                          height: 20.h,
-                          width: 20.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4).r,
-                            color: AppColors.C_7DCCEC,
-                          ),
-                          child:  Center(
-                            child: InkWell(
-                              onTap: (){
-                                if(widget.product.count!=1){
-                                  widget.product.count--;
-                                }
-                                else{
-                                  shop_basket.remove(widget.product);
-                                  widget.setstatePage;
-                                }
-                                widget.setstatePage;
-                                setState(() {});
-                              },
-                                child: const Text("-",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 16),)),
-                          ),
-                        ),
-                        Text(widget.product.count.toString()),
-                        Container(
-                          margin: const EdgeInsets.only(left: 6).r,
-                          height: 20.h,
-                          width: 20.h,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(4).r,
-                            color: AppColors.C_7DCCEC,
-                          ),
-                          child: Center(
-                            child: InkWell(
-                              onTap: (){
-                                setState(() {
-                                  widget.product.count++;
-                                });
-                              },
-                                child: const Text("+",style: TextStyle(color: Colors.white,fontWeight: FontWeight.w600,fontSize: 16),)),
-                          ),
-                        ),
-                      ],
-                    ),
-                  )
-                ],
-              )
+              InkWell(
+                onTap: (){
+                  widget.product.count++;
+                  widget.product.isLiked=false;
+                  shop_basket.add(widget.product);
+                  final snackBar = SnackBar(
+                    content: Text("${widget.product.title} added to Shop Basket!"),
+                    duration: const Duration(milliseconds: 700),
+                  );
+
+                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
+                  widget.setstatePage;
+
+                },
+                  child: text("Add to basket",fontweight: FontWeight.w600))
             ],
           )
 

@@ -109,8 +109,8 @@ List<Product> laptops=[
 
 List<Product> phones=[
   Product(
-      title: "Iphone 14 Pro Max",
-      subtitle: "Brand new",
+      title: "Iphone 14",
+      subtitle: "Pro Max",
       description: "A magical new way to interact with iPhone. Groundbreaking safety features designed to save lives. An innovative 48MP camera for mind-blowing detail. All powered by the ultimate smartphone chip.",
       price: 1099,
       images: [

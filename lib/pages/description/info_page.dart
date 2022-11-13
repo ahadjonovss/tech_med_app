@@ -29,7 +29,7 @@ class _InformationPageState extends State<InformationPage> {
     return Scaffold(
       backgroundColor: Colors.white.withOpacity(0.98),
       body: SafeArea(
-        child: Container(
+        child: SizedBox(
           height: m_h(context),
           width: m_w(context),
           child: Column(
