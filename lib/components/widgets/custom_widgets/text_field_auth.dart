@@ -5,7 +5,7 @@ import 'package:tech_shop_app/utils/colors.dart';
 
 import '../edited_widgets/text_widget.dart';
 
-Widget textfield({required dynamic icn,required String title,required hint}){
+Widget textfield({required dynamic icn,required String title,required hint, dynamic ctrl}){
   return Container(
     child: Column(
       children: [
@@ -17,6 +17,7 @@ Widget textfield({required dynamic icn,required String title,required hint}){
           ],
         ),
         TextField(
+          controller: ctrl,
           decoration: InputDecoration(
               hintText: hint,
           ),

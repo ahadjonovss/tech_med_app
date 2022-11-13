@@ -11,9 +11,12 @@ Widget buttonNavigate(Widget mytext, String navigate,
     {required BuildContext context,
     Color clr = AppColors.C_5956E9,
     num h = 70,
-    num w = 328}) {
+    num w = 328,
+      bool isLogin=false
+    }) {
   return InkWell(
     onTap: () {
+      if(isLogin==false)
       Navigator.pushNamed(context, navigate);
     },
     child: Container(
