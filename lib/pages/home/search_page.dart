@@ -1,17 +1,12 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:tech_shop_app/components/local_data/database.dart';
 import 'package:tech_shop_app/components/widgets/custom_widgets/product_item.dart';
-import 'package:tech_shop_app/components/widgets/custom_widgets/search_widget.dart';
-import 'package:tech_shop_app/service/search_service.dart';
-
 import '../../components/models/product_model.dart';
-import '../../components/widgets/edited_widgets/fitted_img.dart';
 import '../../components/widgets/edited_widgets/mediaQuarees.dart';
 import '../../components/widgets/edited_widgets/sizedbox.dart';
+import '../../data/service/search_service.dart';
 import '../../utils/colors.dart';
-import '../../utils/project_images.dart';
+
 
 class SearchPage extends StatefulWidget {
   const SearchPage({Key? key}) : super(key: key);
