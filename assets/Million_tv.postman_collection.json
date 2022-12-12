@@ -1,0 +1,519 @@
+{
+	"info": {
+		"_postman_id": "2f6dfb76-6a5b-4999-a51d-f0704866160c",
+		"name": "Million tv",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20563137"
+	},
+	"item": [
+		{
+			"name": "user",
+			"item": [
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "phone",
+									"value": "998990995855",
+									"type": "text"
+								},
+								{
+									"key": "password",
+									"value": "Super_Hard_passwor",
+									"type": "text"
+								},
+								{
+									"key": "password2",
+									"value": "Super_Hard_passwor",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "{{url}}/ru/api/account/register/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"register",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register config",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": 998990995855,\n    \"password\": \"Qasw123$\",\n    \"password2\": \"Qasw123$\",\n    \"code\": \"123123\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/ru/api/account/register/conform/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"register",
+								"conform",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "login",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": 998990995858,\n    \"password\": \"Qasw123$\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/ru/api/account/login/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"login",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User info",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token aaa9f5e456763523ae4097956fd185d8f71b7740",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/ru/api/account/me/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"me",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 0519a15298191c26841afbd080535949f210d162",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/ru/api/account/logout/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"logout",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "resert password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": 998990995858,\n    \"password\": \"Qwerty123$\",\n    \"password2\": \"Qwerty123$\",\n    \"code\": 123123\n}"
+						},
+						"url": {
+							"raw": "{{url}}/ru/api/account/resert-password/conform/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"resert-password",
+								"conform",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit user",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 2bbef3fadb0582afba3d8b8108bcb185f6749868",
+								"description": " ",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"full_name\": \"Qqweqsdasdhb\"\n}"
+						},
+						"url": {
+							"raw": "{{url}}/ru/api/account/edit-user/2/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"edit-user",
+								"2",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "edit phone",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 2bbef3fadb0582afba3d8b8108bcb185f6749868",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"phone\": 998990999999,\n    \"code\": 123123\n}"
+						},
+						"url": {
+							"raw": "{{url}}/ru/api/account/edit-phone/conform/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"edit-phone",
+								"conform",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "User self Token",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 01fe5e9d85c6520d28b4de24a90e2785d2864024",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/ru/api/account/user/tokens/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"user",
+								"tokens",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Token user delete",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token 01fe5e9d85c6520d28b4de24a90e2785d2864024",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/ru/api/account/user/token/5/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"user",
+								"token",
+								"5",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user subscription",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token aaa9f5e456763523ae4097956fd185d8f71b7740",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{url}}/ru/api/account/subscriptions/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"subscriptions",
+								""
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "user buy subscription",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Accept-Language",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Token aaa9f5e456763523ae4097956fd185d8f71b7740",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"tariff\": 1\n}"
+						},
+						"url": {
+							"raw": "{{url}}/ru/api/account/subsctiption/create/",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"ru",
+								"api",
+								"account",
+								"subsctiption",
+								"create",
+								""
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "url",
+			"value": "https://chorxos.uz",
+			"type": "string"
+		}
+	]
+}

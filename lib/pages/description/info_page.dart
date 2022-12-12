@@ -8,12 +8,12 @@ import 'package:tech_shop_app/components/widgets/edited_widgets/sizedbox.dart';
 import 'package:tech_shop_app/utils/colors.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-import '../../components/models/product_model.dart';
 import '../../components/widgets/edited_widgets/mediaQuarees.dart';
 import '../../components/widgets/edited_widgets/text_widget.dart';
+import '../../data/models/book_model.dart';
 
 class InformationPage extends StatefulWidget {
-  Product product;
+  Book product;
   InformationPage({Key? key, required this.product}) : super(key: key);
 
   @override
@@ -46,14 +46,14 @@ class _InformationPageState extends State<InformationPage> {
                               Navigator.pop(context);
                             },
                             child: const Icon(Icons.arrow_back_ios)),
-                        InkWell(
-                            onTap: () {
-                              widget.product.isLiked = !widget.product.isLiked;
-                              setState(() {});
-                            },
-                            child: Icon(widget.product.isLiked == true
-                                ? Icons.favorite
-                                : Icons.favorite_outline)),
+                        // InkWell(
+                        //     onTap: () {
+                        //       // widget.product.isLiked = !widget.product.isLiked;
+                        //       setState(() {});
+                        //     },
+                        //     child: Icon(widget.product.isLiked == true
+                        //         ? Icons.favorite
+                        //         : Icons.favorite_outline)),
                       ],
                     ),
                     sized(h: 20),
@@ -116,7 +116,7 @@ class _InformationPageState extends State<InformationPage> {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Center(
-                          child: text(widget.product.title,
+                          child: text(widget.product.name,
                             clr: Colors.black,
                             fontweight: FontWeight.w600,
                             fontsize: 28
@@ -144,12 +144,12 @@ class _InformationPageState extends State<InformationPage> {
                                 ),
                                 onTap: () async {
                                   if (!await launchUrl(
-                                  Uri.parse(widget.product.desc_url??""),
+                                  Uri.parse(widget.product.mainImage??""),
                                   mode: LaunchMode.inAppWebView,
                                   webViewConfiguration: const WebViewConfiguration(
                                   headers: <String, String>{'my_header_key': 'my_header_value'}),
                                   )) {
-                                  throw 'Could not launch ${widget.product.desc_url}';
+                                  throw 'Could not launch ${widget.product.mainImage}';
                                   }
                                 },
                               ),

@@ -74,22 +74,22 @@ class _SearchPageState extends State<SearchPage> {
                     )
                   ],
                 ),
-                SingleChildScrollView(
-                  physics: BouncingScrollPhysics(),
-                  child: Expanded(
-                    child: GridView.builder(
-                      shrinkWrap: true,
-                      itemCount: found.length,
-                      gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                          crossAxisCount: 2,
-                        childAspectRatio: 4/5
-
-                      ),
-                      itemBuilder:(context, index) {
-                        return product_item(found[index], context);
-                      }, )
-                  ),
-                )
+                // SingleChildScrollView(
+                //   physics: BouncingScrollPhysics(),
+                //   child: Expanded(
+                //     child: GridView.builder(
+                //       shrinkWrap: true,
+                //       itemCount: found.length,
+                //       gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+                //           crossAxisCount: 2,
+                //         childAspectRatio: 4/5
+                //
+                //       ),
+                //       itemBuilder:(context, index) {
+                //         return product_item(found[index], context);
+                //       }, )
+                //   ),
+                // )
               ],
             ),
           ),

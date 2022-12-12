@@ -2,6 +2,7 @@ import 'package:dot_navigation_bar/dot_navigation_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:tech_shop_app/pages/home/favourites_page.dart';
 import 'package:tech_shop_app/pages/home/home_page.dart';
+import 'package:tech_shop_app/pages/home/profile_page.dart';
 import 'package:tech_shop_app/pages/home/shop_basket_page.dart';
 import 'package:tech_shop_app/utils/colors.dart';
 
@@ -15,7 +16,7 @@ List pages=[
   HomePage(),
   FavouritesPage(),
   ShopBasketPage(),
-  Container()
+  ProfilePage()
 ];
 
 class _MainPageState extends State<MainPage> {

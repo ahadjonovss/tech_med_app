@@ -53,6 +53,7 @@ dependencies:
   firebase_in_app_messaging: ^0.7.0+7
   animated_snack_bar: ^0.3.0
   image_picker: ^0.8.6
+  email_validator: ^2.1.17
 
 
 dev_dependencies:

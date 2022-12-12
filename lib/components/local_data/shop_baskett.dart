@@ -1,3 +1,4 @@
-import '../models/product_model.dart';
+import '../../data/models/book_model.dart';
 
-Set<Product> shop_basket={};
+
+Set<Book> shop_basket={};

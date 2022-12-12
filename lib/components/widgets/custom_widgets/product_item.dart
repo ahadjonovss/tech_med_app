@@ -2,11 +2,12 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:tech_shop_app/components/routes/routes.dart';
 
+import '../../../data/models/book_model.dart';
 import '../../../utils/project_images.dart';
 import '../../models/product_model.dart';
 import '../edited_widgets/text_widget.dart';
 
-Widget product_item(Product product,BuildContext context,{bool isSearch=false}){
+Widget product_item(Book product,BuildContext context,{bool isSearch=false}){
   return InkWell(
     onTap: (){
       Navigator.pushNamed(context, RouteName.info,arguments: product);
@@ -35,17 +36,17 @@ Widget product_item(Product product,BuildContext context,{bool isSearch=false}){
               children: [
                 Align(
                   alignment: Alignment.center,
-                  child: text(product.title,
+                  child: text(product.name,
                       clr: Colors.black,
                       fontweight: FontWeight.w600,
-                      fontsize: 22),
+                      fontsize: 16),
                 ),
                 Container(
                   margin: const EdgeInsets.only(top: 50).r,
                   child: Align(
                       alignment: Alignment.center,
-                      child: text(product.subtitle,
-                          fontsize: 16,
+                      child: text(product.author,
+                          fontsize: 12,
                           fontweight: FontWeight.w600,
                           clr: Colors.grey
                       )),
@@ -65,10 +66,10 @@ Widget product_item(Product product,BuildContext context,{bool isSearch=false}){
             decoration: BoxDecoration(
               shape: BoxShape.circle,
               image: DecorationImage(
-                image: NetworkImage(product.main_image),
+                image: NetworkImage(product.mainImage),
               )
             ),
-            alignment: Alignment(0,-1),
+            alignment: const Alignment(0,-1),
               ),
         ],
       ),

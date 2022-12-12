@@ -27,7 +27,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return SafeArea(
       child: SingleChildScrollView(
-        physics: BouncingScrollPhysics(),
+        physics: const BouncingScrollPhysics(),
         child: Container(
           padding: const EdgeInsets.only(left: 32,top:32 ).r,
           height: m_h(context),

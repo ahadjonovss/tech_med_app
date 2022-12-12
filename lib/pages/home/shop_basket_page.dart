@@ -26,9 +26,9 @@ class _ShopBasketPageState extends State<ShopBasketPage> {
   Widget build(BuildContext context) {
     num getPrice() {
       num price = 0;
-      for (var i in shop_basket) {
-        price += i.price * i.count;
-      }
+      // for (var i in shop_basket) {
+      //   price += i.price * i.count;
+      // }
       return price;
     }
 
@@ -99,7 +99,7 @@ class _ShopBasketPageState extends State<ShopBasketPage> {
                                                         image: NetworkImage(
                                                             shop_basket
                                                                 .elementAt(index)
-                                                                .main_image))),
+                                                                .mainImage))),
                                               ),
                                               sized(w: 20),
                                               Column(
@@ -108,17 +108,17 @@ class _ShopBasketPageState extends State<ShopBasketPage> {
                                                 children: [
                                                   sized(h: 16),
                                                   text(
-                                                      shop_basket
+                                                      (shop_basket
                                                           .elementAt(index)
-                                                          .title +" "+
+                                                          .name +" "+
                                                           shop_basket
                                                               .elementAt(index)
-                                                              .subtitle,
+                                                              .author).substring(0,15),
                                                       clr: Colors.black,
                                                       fontweight: FontWeight.w600),
                                                   sized(h: 8),
                                                   text(
-                                                      "\$ ${shop_basket.elementAt(index).price.toDouble()}",
+                                                      "\$ ${shop_basket.elementAt(index).price}",
                                                       fontweight: FontWeight.w600),
                                                   sized(h: 8),
                                                   Row(

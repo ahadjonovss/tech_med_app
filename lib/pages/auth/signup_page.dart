@@ -1,11 +1,13 @@
+import 'package:email_validator/email_validator.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:tech_shop_app/components/local_data/shared_prefarence.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/mediaQuarees.dart';
-
+import 'package:tech_shop_app/data/models/user_model.dart';
+import 'package:tech_shop_app/view_models/auth_view_model.dart';
 import '../../components/routes/routes.dart';
-import '../../components/widgets/buttons/navigate_button.dart';
 import '../../components/widgets/custom_widgets/text_field_auth.dart';
 import '../../components/widgets/edited_widgets/sizedbox.dart';
 import '../../components/widgets/edited_widgets/text_widget.dart';
@@ -29,7 +31,7 @@ class _SignUpState extends State<SignUp> {
       backgroundColor: AppColors.C_5956E9,
       body: SafeArea(
         child: SingleChildScrollView(
-          child: Container(
+          child: SizedBox(
             height: m_h(context),
             width: m_w(context),
             child: Column(
@@ -86,13 +88,11 @@ class _SignUpState extends State<SignUp> {
                         sized(h: 60),
                         InkWell(
                           onTap: () async {
-                            await StorageRepository.saveString("name", name_ctrl.text);
-                            await StorageRepository.saveString("email", email_ctrl.text);
-                            await StorageRepository.saveString("psw", psw_ctrl.text);
-                            await StorageRepository.saveString("number", num_ctrl.text);
-
-                            if(name_ctrl.text.isNotEmpty && email_ctrl.text.isNotEmpty && psw_ctrl.text.isNotEmpty && num_ctrl.text.isNotEmpty){
-                               Navigator.pushNamedAndRemoveUntil(context, RouteName.main, (route) => false);
+                            if(EmailValidator.validate(email_ctrl.text)){
+                              UserModel newUser=UserModel(name: name_ctrl.text, number: num_ctrl.text, password: psw_ctrl.text, email: email_ctrl.text, orders: []);
+                              await context.read<AuthViewModel>().signUp(context:context,user: newUser);
+                            }else{
+                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Invalid email")));
                             }
                           },
                           child: Container(

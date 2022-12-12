@@ -6,11 +6,12 @@ import 'package:tech_shop_app/components/widgets/edited_widgets/sizedbox.dart';
 import 'package:tech_shop_app/components/widgets/edited_widgets/text_widget.dart';
 import 'package:tech_shop_app/utils/colors.dart';
 
-import '../../models/product_model.dart';
+import '../../../data/models/book_model.dart';
+
 
 class productInBasket_widget extends StatefulWidget {
   VoidCallback setstatePage;
-  Product product;
+  Book product;
    productInBasket_widget({required this.setstatePage,required this.product,Key? key}) : super(key: key);
 
   @override
@@ -37,7 +38,7 @@ class _productInBasket_widgetState extends State<productInBasket_widget> {
             width: 80.w,
             decoration: BoxDecoration(
               image: DecorationImage(
-                image: NetworkImage(widget.product.main_image)
+                image: NetworkImage(widget.product.mainImage)
               )
             ),
           ),
@@ -46,28 +47,28 @@ class _productInBasket_widgetState extends State<productInBasket_widget> {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               sized(h: 16),
-              text(widget.product.title+" "+widget.product.subtitle,
+              text(widget.product.name+" "+widget.product.author,
                   clr: Colors.black,
                 fontweight: FontWeight.w600
               ),
               sized(h: 8),
-              text("\$ ${widget.product.price.toDouble()}",fontweight: FontWeight.w600),
+              text("\$ ${widget.product.price}",fontweight: FontWeight.w600),
               sized(h: 8),
-              InkWell(
-                onTap: (){
-                  widget.product.count++;
-                  widget.product.isLiked=false;
-                  shop_basket.add(widget.product);
-                  final snackBar = SnackBar(
-                    content: Text("${widget.product.title} added to Shop Basket!"),
-                    duration: const Duration(milliseconds: 700),
-                  );
-
-                  ScaffoldMessenger.of(context).showSnackBar(snackBar);
-                  widget.setstatePage;
-
-                },
-                  child: text("Add to basket",fontweight: FontWeight.w600))
+              // InkWell(
+              //   onTap: (){
+              //     widget.product.count++;
+              //     widget.product.isLiked=false;
+              //     shop_basket.add(widget.product);
+              //     final snackBar = SnackBar(
+              //       content: Text("${widget.product.title} added to Shop Basket!"),
+              //       duration: const Duration(milliseconds: 700),
+              //     );
+              //
+              //     ScaffoldMessenger.of(context).showSnackBar(snackBar);
+              //     widget.setstatePage;
+              //
+              //   },
+              //     child: text("Add to basket",fontweight: FontWeight.w600))
             ],
           )
 

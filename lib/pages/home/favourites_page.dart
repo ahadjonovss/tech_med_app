@@ -51,12 +51,12 @@ class _FavouritesPageState extends State<FavouritesPage> {
           padding: const EdgeInsets.all(24).r,
           height: m_h(context),
           width: m_w(context),
-          child: ListView.builder(
-            physics: const BouncingScrollPhysics(),
-            itemCount: favs.length,
-              itemBuilder: (context, index) {
-                return productInBasket_widget(product: favs[index], setstatePage: () { setState(() {}); },);
-              },)
+          // child: ListView.builder(
+          //   physics: const BouncingScrollPhysics(),
+          //   itemCount: favs.length,
+          //     itemBuilder: (context, index) {
+          //       return productInBasket_widget(product: favs[index], setstatePage: () { setState(() {}); },);
+          //     },)
         ),
       ),
     );
