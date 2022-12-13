@@ -15,5 +15,7 @@ class OrderViewModel extends ChangeNotifier{
 
   addOrder(String productId)=>orderRepository.addOrder(productId: productId);
 
+  getProductIdByOrderId(context,String orderID)=>orderRepository.getProductIdByOrderId(context,orderID);
+
 
 }

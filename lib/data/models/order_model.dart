@@ -10,9 +10,9 @@ class OrderModel {
   String productId;
 
   factory OrderModel.fromJson(Map<String, dynamic> json) => OrderModel(
-    orderId: json["orderId"],
-    count: json["count"],
-    productId: json["productId"],
+    orderId: json["orderId"]??"no name",
+    count: json["count"]??0,
+    productId: json["productId"]??"no data",
   );
 
   Map<String, dynamic> toJson() => {

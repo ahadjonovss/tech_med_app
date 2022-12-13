@@ -21,4 +21,5 @@ class ProductsViewModel extends ChangeNotifier{
 
   getProductById(String id)=>productsRepository.getProductByDocId(id);
 
+
 }

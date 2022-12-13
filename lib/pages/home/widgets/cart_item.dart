@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
 import 'package:tech_shop_app/data/models/order_model.dart';
+import 'package:tech_shop_app/view_models/order_view_model.dart';
 import 'package:tech_shop_app/view_models/products_view_model.dart';
 
 import '../../../components/local_data/shop_baskett.dart';
@@ -11,8 +12,8 @@ import '../../../data/models/book_model.dart';
 import '../../../utils/colors.dart';
 
 class CartItem extends StatefulWidget {
-  OrderModel order;
-  CartItem({required this.order,Key? key}) : super(key: key);
+  String orderId;
+  CartItem({required this.orderId,Key? key}) : super(key: key);
 
   @override
   State<CartItem> createState() => _CartItemState();
@@ -22,10 +23,12 @@ class _CartItemState extends State<CartItem> {
   @override
   Widget build(BuildContext context) {
     return FutureBuilder(
-      future: context.read<ProductsViewModel>().getProductById(widget.order.productId),
+      future: context.read<OrderViewModel>().getProductIdByOrderId(context,widget.orderId),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
         if(snapshot.hasData){
-          Book product=snapshot.data;
+          print("Data ${snapshot.data}");
+          Book product=snapshot.data[1];
+          OrderModel order=snapshot.data[0];
           return Container(
             margin:
             const EdgeInsets.only(bottom: 20).r,
@@ -126,7 +129,7 @@ class _CartItemState extends State<CartItem> {
                                       )),
                                 ),
                               ),
-                              Text(widget.order.count
+                              Text(order.count
                                   .toString()),
                               Container(
                                 margin:
@@ -148,27 +151,28 @@ class _CartItemState extends State<CartItem> {
                                 ),
                                 child: Center(
                                   child: InkWell(
-                                      onTap: () {
-                                        setState(
-                                                () {
-                                              shop_basket
-                                                  .elementAt(
-                                                  0)
-                                                  .count++;
-                                            });
+                                      onTap: () async {
+                                        context.read<OrderViewModel>().addOrder(product.productId);
+                                        setState(() {
+
+                                        });
                                       },
                                       child:
-                                      const Text(
-                                        "+",
-                                        style: TextStyle(
-                                            color: Colors
-                                                .white,
-                                            fontWeight:
-                                            FontWeight
-                                                .w600,
-                                            fontSize:
-                                            16),
-                                      )),
+                                       Consumer(
+                                         builder: (BuildContext context, value, Widget? child) {
+                                           return const Text(
+                                             "+",
+                                             style: TextStyle(
+                                                 color: Colors
+                                                     .white,
+                                                 fontWeight:
+                                                 FontWeight
+                                                     .w600,
+                                                 fontSize:
+                                                 16),
+                                           );
+                                         },
+                                       )),
                                 ),
                               ),
                             ],
@@ -182,6 +186,9 @@ class _CartItemState extends State<CartItem> {
             ),
           );
 
+        }
+        if(snapshot.hasError){
+          print(snapshot.error.toString());
         }
         return Container();
       },

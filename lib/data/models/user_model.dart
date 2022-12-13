@@ -20,7 +20,7 @@ class UserModel {
   String number;
   String email;
   String password;
-  List<OrderModel> orders;
+  List orders;
 
   factory UserModel.fromJson(Map<String, dynamic> json) => UserModel(
     userId: json["userId"],
@@ -28,7 +28,7 @@ class UserModel {
     number: json["number"],
     email: json["email"],
     password: json["password"],
-    orders: List<OrderModel>.from(json["orders"].map((x) => OrderModel.fromJson(x))),
+    orders:json["orders"],
   );
 
   Map<String, dynamic> toJson() => {
@@ -37,6 +37,6 @@ class UserModel {
     "number": number,
     "email": email,
     "password": password,
-    "orders": List<dynamic>.from(orders.map((x) => x.toJson())),
+    "orders": orders,
   };
 }
