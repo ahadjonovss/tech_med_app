@@ -4,18 +4,23 @@ import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:provider/provider.dart';
+import 'package:tech_shop_app/components/local_data/shared_prefarence.dart';
 import 'package:tech_shop_app/view_models/auth_view_model.dart';
+import 'package:tech_shop_app/view_models/categories_view_model.dart';
 import 'package:tech_shop_app/view_models/products_view_model.dart';
 
 import 'components/routes/routes.dart';
+import 'data/repositories/admin/categories_repository.dart';
 import 'data/repositories/admin/products_repository.dart';
 import 'data/repositories/auth_repository.dart';
 
 void main() async{
+  //shu original
   WidgetsFlutterBinding.ensureInitialized();
   await Firebase.initializeApp();
   runApp( MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (context)=>CategoriesViewModel(categoriesRepository: CategoriesRepository(firebaseFirestore: FirebaseFirestore.instance))),
         ChangeNotifierProvider(create: (context)=>AuthViewModel(authRepository: AuthRepository(firebaseFirestore: FirebaseFirestore.instance))),
         ChangeNotifierProvider(create: (context)=>ProductsViewModel(productsRepository: ProductsRepository(firebaseFirestore: FirebaseFirestore.instance)))
 
@@ -35,7 +40,7 @@ class MyApp extends StatelessWidget {
           return const MaterialApp(
             
             debugShowCheckedModeBanner: false,
-            initialRoute: RouteName.splash,
+            initialRoute: RouteName.main,
             onGenerateRoute: AppRoutes.generateRoutes,
           );
         }

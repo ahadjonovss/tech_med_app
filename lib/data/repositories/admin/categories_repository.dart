@@ -20,6 +20,11 @@ class CategoriesRepository{
   }
 
 
+  Future<List<CategoryModel>> getAllCategories() async {
+     var data =await firebaseFirestore.collection("categories").get();
+     return data.docs.map((e) => CategoryModel.fromJson(e.data())).toList();
+  }
+
   Stream<List<CategoryModel>> getCategories() =>
       firebaseFirestore.collection("categories").snapshots().map(
             (event1) => event1.docs

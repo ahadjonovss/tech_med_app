@@ -23,8 +23,8 @@ class ProductsRepository {
     return Book.fromJson(data.data() as Map<String, dynamic>);
   }
 
-  Stream<List<Book>> getCategories() {
-    return firebaseFirestore.collection("products").snapshots().map(
+  Stream<List<Book>> getCategories(String categoryId) {
+    return firebaseFirestore.collection("products").where("categoryId",isEqualTo: categoryId).snapshots().map(
         (event) => event.docs.map((e) => Book.fromJson(e.data())).toList());
   }
 

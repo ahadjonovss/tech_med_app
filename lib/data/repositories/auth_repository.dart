@@ -1,6 +1,7 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:tech_shop_app/components/local_data/shared_prefarence.dart';
 import 'package:tech_shop_app/data/models/user_model.dart';
 
 import '../../components/routes/routes.dart';
@@ -19,7 +20,11 @@ class AuthRepository {
       await firebaseFirestore
           .collection("users")
           .doc(docId.id)
-          .update({"userId": docId.id}).then((value) => Navigator.pushNamedAndRemoveUntil(context, RouteName.main, (route) => false)).onError((error, stackTrace) => false);
+          .update({"userId": docId.id}).then((value) async {
+         await StorageRepository.saveString("token", docId.id);
+            Navigator.pushNamedAndRemoveUntil(context, RouteName.main, (route) => false);
+            return true;
+      }).onError((error, stackTrace) => false);
     }else{
       ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Current email has already used")));
     }

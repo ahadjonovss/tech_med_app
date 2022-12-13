@@ -11,7 +11,7 @@ class ProductsViewModel extends ChangeNotifier{
   List<String>? images;
   Book? newBook;
 
-  Stream<List<Book>> listenCategories()=>productsRepository.getCategories();
+  Stream<List<Book>> listenCategories(String categoryId)=>productsRepository.getCategories(categoryId);
 
   addBook(Book book)=>productsRepository.addProduct(book: book);
 

@@ -9,17 +9,18 @@ import '../../../data/models/book_model.dart';
 import '../../models/product_model.dart';
 
 // ignore: non_constant_identifier_names
-Widget product_view(BuildContext context,List<Product> products){
+Widget product_view(BuildContext context,String categoryId){
   return SizedBox(
     height: 300.h,
     child: StreamBuilder(
-      stream: context.read<ProductsViewModel>().listenCategories(),
+      stream: context.read<ProductsViewModel>().listenCategories(categoryId),
       builder: (BuildContext context, AsyncSnapshot<dynamic> snapshot) {
-        List<Book>  products=snapshot.data;
         if(snapshot.connectionState==ConnectionState.waiting){
           return const CircularProgressIndicator();
         }
         if(snapshot.hasData){
+          List<Book>  products=snapshot.data;
+          print(products);
           return ListView.builder(
             physics: const BouncingScrollPhysics(),
             itemCount: products.length,

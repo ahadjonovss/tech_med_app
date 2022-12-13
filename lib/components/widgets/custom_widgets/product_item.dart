@@ -54,7 +54,7 @@ Widget product_item(Book product,BuildContext context,{bool isSearch=false}){
                 Center(
                   child: Container(
                     margin: const EdgeInsets.only(top: 120),
-                    child: text("\$ ${product.price}",fontweight: FontWeight.w800),
+                    child: text("\ ${product.price} UZS",fontweight: FontWeight.w800),
                   ),
                 )
               ],
