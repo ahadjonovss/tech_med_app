@@ -1,0 +1,14 @@
+{
+  "userId": "",
+  "name": "",
+  "number": "",
+  "email": "",
+  "password": "",
+  "orders": [
+    {
+      "orderId":"",
+      "count":1,
+      "productId": ""
+    }
+  ]
+}

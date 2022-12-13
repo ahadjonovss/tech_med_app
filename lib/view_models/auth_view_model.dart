@@ -31,4 +31,6 @@ class AuthViewModel extends ChangeNotifier{
           .showSnackBar(SnackBar(content: Text(e.toString())));
     }
   }
+
+
 }

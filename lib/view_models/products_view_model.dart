@@ -19,4 +19,6 @@ class ProductsViewModel extends ChangeNotifier{
 
   updateCategory(String docId,Book book)=>productsRepository.updateCategory(book: book, docId: docId);
 
+  getProductById(String id)=>productsRepository.getProductByDocId(id);
+
 }

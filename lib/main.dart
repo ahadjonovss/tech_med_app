@@ -1,3 +1,4 @@
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:firebase_core/firebase_core.dart';
@@ -7,6 +8,7 @@ import 'package:provider/provider.dart';
 import 'package:tech_shop_app/components/local_data/shared_prefarence.dart';
 import 'package:tech_shop_app/view_models/auth_view_model.dart';
 import 'package:tech_shop_app/view_models/categories_view_model.dart';
+import 'package:tech_shop_app/view_models/order_view_model.dart';
 import 'package:tech_shop_app/view_models/products_view_model.dart';
 
 import 'components/routes/routes.dart';
@@ -20,6 +22,7 @@ void main() async{
   await Firebase.initializeApp();
   runApp( MultiProvider(
       providers: [
+        ChangeNotifierProvider(create: (context)=>OrderViewModel(firebaseFirestore: FirebaseFirestore.instance)),
         ChangeNotifierProvider(create: (context)=>CategoriesViewModel(categoriesRepository: CategoriesRepository(firebaseFirestore: FirebaseFirestore.instance))),
         ChangeNotifierProvider(create: (context)=>AuthViewModel(authRepository: AuthRepository(firebaseFirestore: FirebaseFirestore.instance))),
         ChangeNotifierProvider(create: (context)=>ProductsViewModel(productsRepository: ProductsRepository(firebaseFirestore: FirebaseFirestore.instance)))

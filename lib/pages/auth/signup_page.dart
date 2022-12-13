@@ -89,7 +89,7 @@ class _SignUpState extends State<SignUp> {
                         InkWell(
                           onTap: () async {
                             if(EmailValidator.validate(email_ctrl.text)){
-                              UserModel newUser=UserModel(name: name_ctrl.text, number: num_ctrl.text, password: psw_ctrl.text, email: email_ctrl.text, orders: []);
+                              UserModel newUser=UserModel(name: name_ctrl.text, number: num_ctrl.text, password: psw_ctrl.text, email: email_ctrl.text, orders: [], userId: '');
                               await context.read<AuthViewModel>().signUp(context:context,user: newUser);
                             }else{
                               ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Invalid email")));

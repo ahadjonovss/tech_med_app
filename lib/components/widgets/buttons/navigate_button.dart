@@ -1,7 +1,10 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:provider/provider.dart';
 import 'package:tech_shop_app/components/local_data/shop_baskett.dart';
+import 'package:tech_shop_app/data/models/order_model.dart';
+import 'package:tech_shop_app/view_models/order_view_model.dart';
 
 import '../../../data/models/book_model.dart';
 import '../../../utils/colors.dart';
@@ -38,9 +41,8 @@ Widget button_addList(Widget mytext,
     required Book product,
     required dynamic scaffoldKey}) {
   return InkWell(
-    onTap: () {
-        product.count++;
-        shop_basket.add(product);
+    onTap: () async{
+        await context.read<OrderViewModel>().addOrder(product.productId);
       final snackBar = SnackBar(
           content: Text("${product.name} added to Shop Basket!"),
         duration: const Duration(milliseconds: 700),
